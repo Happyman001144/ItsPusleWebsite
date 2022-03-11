@@ -1,0 +1,280 @@
+:root {
+	--ui-darkest: #121212;
+	--ui-darker: #191919;
+	--ui-dark: #1e1e1e;
+	--ui-light: #242424;
+	--ui-lighter: #2d2d2d;
+	--ui-lightest: #3b3b3b;
+	--text-lightest: #ffff;
+	--text-lighter: #dedede;
+	--text-light: #969696;
+	--text-dark: #878787;
+	--text-darker: #646464;
+	--accent: #ff79c6;
+	--accent-darker: #ff0083;
+}
+
+body {
+	background: var(--ui-dark) !important;
+	color: var(--text-lightest) !important;
+	font-family: "Karla" !important;
+}
+
+header {
+	z-index: 2;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 1.5rem;
+	display: flex;
+	background: hsl(0 0% 0% / 0.5);
+}
+
+@supports (backdrop-filter: blur(1em)) {
+	header {
+		background: transparent;
+		backdrop-filter: blur(1em);
+		border-bottom: rgba(255, 255, 255, 0.05) 1px solid;
+	}
+}
+
+.site-button {
+	color: #fff;
+	padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+	border: 1.5px #fff solid;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.site-button:hover {
+	color: #fff;
+	text-decoration: none;
+	border: 1.5px var(--accent) solid;
+}
+
+.logo {
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.3s;
+}
+
+.logo:hover {
+	filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.35));
+	transform: scale(1.075) rotate(1deg);
+}
+
+.logo:active {
+	transform: scale(0.8);
+}
+
+::selection {
+	background: #ff79c555 !important;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.hero small {
+	font-size: 1rem;
+}
+
+.glow {
+	text-shadow: 0 0 7px rgb(255 255 255 / 60%);
+}
+.wave {
+	animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+	animation-duration: 2.5s; /* Change to speed up or slow down */
+	animation-iteration-count: infinite; /* Never stop waving :) */
+	transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+	display: inline-block;
+}
+
+@keyframes wave-animation {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(14deg);
+	} /* The following five values can be played with to make the waving more or less extreme */
+	20% {
+		transform: rotate(-8deg);
+	}
+	30% {
+		transform: rotate(14deg);
+	}
+	40% {
+		transform: rotate(-4deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	60% {
+		transform: rotate(0deg);
+	} /* Reset for the last half to pause */
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+a {
+	color: var(--accent) !important;
+	text-decoration: none !important;
+}
+
+a:hover {
+	text-decoration: underline !important;
+}
+
+.term {
+	background: var(--ui-darker);
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+*::-webkit-scrollbar {
+	height: 0.5rem !important;
+	width: 0.5rem !important;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 0.25rem !important;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--text-dark) !important;
+}
+
+footer {
+	display: block;
+}
+
+footer i {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+footer a {
+	color: white !important;
+	text-decoration: none !important;
+}
+
+footer a:hover {
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.icon-talk {
+	margin-right: 15px;
+}
+
+#particles-js {
+	background-color: transparent;
+	position: absolute;
+	filter: blur(1px);
+	overflow: hidden;
+	height: 700px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	opacity: 50%;
+}
+
+.bg-overlay {
+	z-index: 1;
+}
+
+.box {
+	margin-bottom: 15px;
+	width: 100%;
+	height: 120px;
+	background-color: var(--ui-darker);
+}
+
+.nopad {
+	padding: none !important;
+	margin: none !important;
+}
+
+.tw-l {
+	font-weight: lighter;
+	font-size: medium;
+	color: var(--accent) !important;
+	text-transform: uppercase;
+	opacity: 50%;
+}
+
+.cbox {
+	margin-bottom: 15px;
+	width: 100%;
+	height: 100%;
+	background-color: var(--ui-darker);
+}
+
+.spin {
+	animation: spin 1.5s infinite linear !important;
+}
+
+@keyframes spin {
+	0% {
+		opacity: 50%;
+		transform: rotate(0deg);
+	}
+	50% {
+		opacity: 100%;
+		transform: rotate(180deg);
+	}
+	100% {
+		opacity: 50%;
+		transform: rotate(360deg);
+	}
+}
+
+.resp-footer-link {
+	text-align: end;
+}
+.resp-footer-copy {
+	text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+	.responsive-grid {
+		display: none;
+	}
+	.resp-footer-link {
+		text-align: center;
+	}
+	.resp-footer-copy {
+		text-align: center;
+	}
+}
+
+.invisible {
+	display: none;
+}
+
+.small-spotify {
+	font-size: 0.6rem;
+}
+
+.link-contact {
+	color: var(--text-lightest) !important;
+	text-decoration: none !important;
+}
+
+.link-contact:hover {
+	color: var(--text-lightest) !important;
+	text-decoration: none !important;
+}
+
+.alignright {
+	float: right;
+}
